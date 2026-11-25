@@ -1,28 +1,37 @@
 # Stroke Data Analysis
 
-A Python course project exploring a public stroke dataset with exploratory data analysis, clustering, regression and binary classification.
+## Overview
 
-## Analysis
+A Python analysis of a public stroke dataset. The project examines how recorded stroke rates vary across patient groups and compares classification models on a stratified train/test split.
 
-| Stage | Approach |
-| --- | --- |
-| Data preparation | Inspect types, clean categorical values, drop duplicate and incomplete records |
-| Exploration | Compare observed stroke rates across groups using pivot tables and charts |
-| Clustering | Explore groups using K-means and scaled features |
-| Regression | Model average glucose level using age and BMI with ordinary least squares |
-| Classification | Compare decision trees, random forest, XGBoost and a small neural network |
+## Features
 
-The tree-based models report accuracy, precision, recall, F1, ROC AUC and confusion matrices on a stratified test split. Stroke cases are less frequent, so recall and the confusion matrix give context to accuracy. This is an educational analysis. The neural network also uses the test split for epoch validation, so its results are exploratory.
+- Clean the dataset and visualize differences across demographic and health groups.
+- Explore groups with K-means and model average glucose level using linear regression.
+- Compare decision trees, random forest, and XGBoost using precision, recall, F1, ROC AUC, and confusion matrices.
+- Explore a small neural network. Its validation uses the test split, so its results are exploratory.
 
-## Run locally
+## Tech Stack
 
-1. Download [Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) and put `healthcare-dataset-stroke-data.csv` next to `main.py`.
-2. With Python 3.12 installed, run these commands from the project folder in PowerShell:
+Python 3.12, pandas, Matplotlib, Seaborn, scikit-learn, statsmodels, XGBoost, and TensorFlow/Keras.
+
+## Getting Started
+
+1. Download the CSV from the [Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset).
+2. Place `healthcare-dataset-stroke-data.csv` next to `analyze_stroke_data.py`.
+3. From the repository root, run the following in PowerShell.
 
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe main.py
+.\.venv\Scripts\python.exe analyze_stroke_data.py
 ```
 
-The script prints summaries and model metrics. Close each chart window to continue to the next stage.
+The script prints summaries and evaluation metrics in the terminal. Close each chart window to continue.
+
+## Repository Structure
+
+| Path | Purpose |
+| --- | --- |
+| `analyze_stroke_data.py` | Data cleaning, charts, and model evaluation |
+| `requirements.txt` | Python dependencies |
