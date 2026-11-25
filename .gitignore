@@ -1,0 +1,4 @@
+healthcare-dataset-stroke-data.csv
+.venv*/
+__pycache__/
+*.py[cod]
